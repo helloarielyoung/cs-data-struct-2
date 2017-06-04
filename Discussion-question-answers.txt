@@ -1,0 +1,100 @@
+
+Recursion
+
+    In your own words, what is recursion?
+
+    Answer:  In Python, recursion is when a function calls itself from within
+    itself.  It takes an input, does something with it, and then passes the
+    output back to itself again (and again until the base case is reached.)
+
+    Why is it necessary to have a base case?
+
+    Answer:  without a base case, recursion will go on forever (though in Python,
+    it will stop after 1000 times.)
+
+Graphs
+
+    What is a graph?
+    Answer:  a graph is a datastructure that is non-hirerarchical, may be
+    directed or un-directed, and may be cyclical.  It is used for things like
+    mapping the the relationships between things, or moving from one state to
+    another state.  A graph is made up of nodes (or vertices) which are connected
+    by edges.  Each node contains the data and a list of it's adjacent nodes.  There
+    is no beginning or end of a graph.
+
+    How is a graph different from a tree?
+    Answer:  A graph does not have a root, and it not hirerarchical.  Instead of having
+    children, a node has adjacencies, and connections between nodes may be
+    on the same level or even cyclical.
+
+    Give an example of something that would be good to model with a graph.
+    Answer:  There are the examples we discussed in class, such as bus routes/stops,
+    or a food chain.  It might also be used to map out a work process, such as
+    the path a news article takes through being written, edited, reviewed,
+    checked by legal, possibly sent back for revision, and ultimately to
+    publication.
+
+Performance of Different Data Structures
+
+Fill in the missing spots in the chart with the correct runtimes. Do this by reasoning through how the data structures work, NOT by looking up the solution. Add-R means add to the right/end/top and Add-L means add to the left/beginning/bottom. There are X’s in the spots where that operation doesn’t make sense for that data structure (for instance, you can’t index a stack, or pop from the end of a queue). We’ve provided the first few answers for you.
+
+    Fill in the runtimes for the following actions for the table below:
+    Data Structure              Index   Search  Add-R   Add-L   Pop-L   Pop-R
+    Python List (Array)         O(1)    O(n)    O(1)    O(n)    O(n)    O(1)             
+    Linked List                 O(n)    O(n)    O(1)    O(1)    O(1)    O(1)*   
+    Doubly-Linked List          O(n)    O(n)    O(1)    O(1)    O(1)    O(1)*
+    Queue (as Array)            X       X       O(1)    X       O(n)    X
+    Queue (as LL or DLL)        X       X       O(1)    X       O(1)*   X
+    Stack (as Array, LL, or DLL)X       X       O(1)    X       X       O(1)*
+    Deque (as DLL)              X       X       O(1)    O(1)    O(1)    O(1)*
+
+    *I assumed the LL and DLL keep track of the head and the tail
+
+        Index: Find an item in the structure when you know its position
+        Search: Find an item in the structure when you know its data
+        Add(R/L): Set a key in set/dictionary or add node to tree
+        Pop(R/L): Remove a key or node
+
+Fill in Runtime and Memory:
+
+    The answers for dictionary have been provided; you should fill in the rest:
+    Data Structure          Get         Add         Delete      Iterate Memory
+    Dictionary (Hash Map)   O(1)        O(1)        O(1)        O(n)    medium
+    Set (Hash Map)          O(1)        O(1)        O(1)        O(n)    medium
+    Binary Search Tree      O(log n)    O(log n)    O(log n)    O(1)    little
+    Tree                    O(n)        O(1)        O(1)        O(1)    little  
+
+        Get: Find an item in the structure
+        Add: Set a key in set/dictionary or add node to tree
+        Delete: Remove a key or node
+        Iterate: Find next item in data structure
+        Memory: Relative to data, how much memory is used? (Choices: a little, medium, or a lot)
+
+Sorting
+
+    Describe in words how the Bubble Sort algorithm works.
+    Answer:  buble sort works by iterating over the list and comparing the items
+    two at a time. If the one on the left is bigger than the one on the right,
+    swap them.  At the end of one iteration, the largest item in the list will
+    be the last item in the list.  Iterate over the list again for a total of
+    n-1 times, and the list is sorted.
+
+    Describe in words how the Merge Sort algorithm works.
+    Merge sort works on the idea that if you have two sorted lists, and compare the
+    first value in each list and put the lower one into a third list, then keep
+    doing that until you get through both lists, then the final list will be
+    sorted.  The amazing part is how do you get two sorted lists to work with
+    if your data is not sorted.  That is done by breaking your list down in to 
+    as many lists as necessary to have all lists of 1, then merge those as pairs
+    into sorted lists of two, then merge those as pairs into sorted lists of 4,
+    and so forth until you end up with your whole list you started with sorted.
+
+    Describe in words how the Quick Sort algorithm works.
+    Quick sort starts with a pivot that you pick from the list and put it in
+    the middle, then moving everything that is lower than the pivot to the left
+    of it, and everything higher than the pivot to the right of it.  This is then
+    done recursively to each side of the pivot:  pick pivots for the left and
+    the right sides of the original pivot and move everything to the left and
+    right of those two pivots if they're higher/lower accordingly.  Keep doing
+    that until you reach a list that cannot be divided (<2) and then concatenate
+    the list all together and return it.
