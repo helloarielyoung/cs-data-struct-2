@@ -10,7 +10,7 @@ def bubble_sort(lst):
 
     # outer loop length of the list minus 1 (unless no swap)
     for i in range(len(lst) - 1):
-        swap_occurred = False 
+        swap_occurred = False
         # inner loop:
         # length of the list minus 1
         # will go all the way through the list once and highest item will be
