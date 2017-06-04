@@ -81,7 +81,7 @@ def list_length(my_list):
 
     # I am really lost on this.  I tried for an hour unsuccessfully to do this by
     # myself.  Finally googled the answer above.  I don't understand why it
-    # works.  I also don't understand why this doesn't work:
+    # works.  I also don't understand why this *doesn't* work:
     # if not my_list:
     #     return 0
     # return 1 + my_list[1:]

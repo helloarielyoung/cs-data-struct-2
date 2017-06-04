@@ -8,13 +8,14 @@ def bubble_sort(lst):
         [1, 2, 3, 4, 5, 7]
     """
 
-    # repeat inner loop once for each item in the list unless no swap
+    # outer loop length of the list minus 1 (unless no swap)
     for i in range(len(lst) - 1):
-        swap_occurred = False
-        # for each item in the list compare it to the next one
+        swap_occurred = False 
+        # inner loop:
+        # length of the list minus 1
         # will go all the way through the list once and highest item will be
         # at the end.  If no swap occurred during iteration, list is sorted
-        for j in range(len(lst) - 1):
+        for j in range(len(lst) - 1 - i):
             if lst[j] > lst[j + 1]:
                 # if one to the right is smaller, swap them
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
@@ -73,12 +74,18 @@ def merge_sort(lst):
     >>> merge_sort([6, 2, 3, 9, 0, 1])
     [0, 1, 2, 3, 6, 9]
     """
-    
-    pass
 
+    if len(lst) < 2:
+        return lst
 
+    mid = int(len(lst) // 2)
+    left = merge_sort(lst[:mid])
+    right = merge_sort(lst[mid:])
 
+    return merge_lists(left, right)
 
+    # I am confused because the merge_sort example in "sorting-demo\sorts.py"
+    # does not return anything...  how does that work??
 
 #####################################################################
 # END OF ASSIGNMENT: You can ignore everything below.
